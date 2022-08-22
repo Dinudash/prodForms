@@ -1,0 +1,27 @@
+.img{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#title{
+  text-align: center;
+  text-transform: uppercase;
+}
+.content{
+  text-align: center;
+
+}
+.cls{
+  background-color: blueviolet;
+  color:black;
+}
+button{
+  color: rgb(1, 15, 15);
+  background-color:blueviolet;
+  
+}
+.container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+ 
+}

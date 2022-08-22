@@ -1,0 +1,99 @@
+<div id="title">
+  <h2>{{ product.title }}</h2>
+  <div class="img">
+    <img [src]="product.images[0]" />
+  </div>
+  <div class="content">
+    <p><b>price:</b>${{ product.price }}</p>
+    <p><b>Brand:</b> {{ product.brand }}</p>
+    <p><b>Description:</b> {{ product.description }}</p>
+    <p><b>Category:</b> {{ product.category }}</p>
+    <p><b>Discount Percentage:</b> {{ product.discountPercentage }}</p>
+    <p><b>Rating:</b> {{ product.rating }}</p>
+  </div>
+</div>
+
+<div class="product-form" *ngIf="productForm">
+  <form  class="container"
+    (ngSubmit)="onSubmit(productForm.value, productForm.isvalid)"
+    [formGroup]="productForm"
+    novalidate
+  >
+    <div class="grid"> 
+     <div class="col-12 md:col-6 lg:col-3 sm:flex-nowrap" >  
+
+     <mat-form-field class="example-full-width"   appearance="fill">
+        <mat-label>Title</mat-label>
+        <input type="text" 
+        matInput 
+        placeholder="Title"
+         formControlName="title" />
+        <mat-error *ngIf="productForm.get('title').hasError('required')"
+          >Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+     </div>
+    
+   
+     <div class="col-12 md:col-6 lg:col-3">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea type="text" 
+      matInput 
+      placeholder="Description"
+      formControlName="description"></textarea>
+      <mat-error *ngIf="productForm.get('description').hasError('required')">description is <strong>required</strong>
+      </mat-error>
+      </mat-form-field>
+     </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Brand</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Brand"
+          formControlName="brand"
+        />
+        <mat-error *ngIf="productForm.get('brand').hasError('required')"
+          >Brand is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Category</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Category"
+          formControlName="category"
+        />
+        <mat-error *ngIf="productForm.get('category').hasError('required')"
+          >category is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Price</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Price"
+          formControlName="price"
+        />
+        <mat-error *ngIf="productForm.get('price').hasError('required')"
+          >Price is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+    <br>
+    <br>
+     <br>
+    <div>
+    <button   type="submit" [disabled]="productForm.invalid">Submit</button>
+    </div>
+ </form>
+</div>

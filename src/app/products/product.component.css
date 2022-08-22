@@ -1,0 +1,41 @@
+
+*{
+  margin: 0;
+}
+
+.command { 
+  background-color: black;
+  text-align: center;
+  color: aliceblue;
+  margin-bottom: 0px;
+}
+.btn:hover{
+  color: rgba(28, 34, 225, 0.391);
+}
+
+.example-card {
+  width: 200px;
+  background-color: beige;
+  margin-top: 0px;
+  
+}
+.prod{
+  width: 60%;
+  object-fit: cover;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 20px;
+  display: flex;
+}
+.example-header-image{
+  background-size: cover;
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+img{
+  object-fit: fill;
+  height:100% ;
+  width: 100%;
+}
